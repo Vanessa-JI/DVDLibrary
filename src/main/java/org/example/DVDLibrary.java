@@ -1,6 +1,6 @@
 package org.example;
 
-public class Library extends MediaCollection{
+public class DVDLibrary extends MediaCollection{
 
     // defining default constructor
 
@@ -10,6 +10,7 @@ public class Library extends MediaCollection{
     // defining non-static (instance) methods
     // addDVD takes in a DVD object and adds it to the collection
     // SINCE THESE ALL REQUIRE AN INSTANCE OF DVD, SHOULD I MOVE THEM TO THE DVD CLASS?
+    // MAY NEED TO MOVE ALL OF THESE METHODS INTO THE MEDIA CONTROLLER CLASS????
     public void addDVD(DVD dvdToAdd) {
 
         // if the DVD name has already been in the library, ask the user if they want to overwrite
