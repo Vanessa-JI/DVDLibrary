@@ -1,0 +1,9 @@
+Jaws,1011979,PG,Spielberg,Warner,A biteful
+The lord of the rings: the fellowship of the ring,10122001,R,Peter Jackson,New Line Cinema,10/10
+One,12121999,PG,Terry,HBO,Yuck
+Gladiator,1052000,PG,Ridley Scott,DreamWorks,Ridley Scott's Gladiator is an epic film with quotes to match
+Valhalla Rising,10102016,G,Thorsen,Norway Films,Good
+Dune,21102021,PG,Denis Villeneuve,Legendary Pictures,magical
+SpaceBalls,2031983,R,M. Brooks,Warner,Funny
+Arrival,1092016,R,Dennis Villeneuve,FilmNation Entertainment,94% Approval rating on Rotten Tomatoes
+The Proposition,1042015,R,N. Cave,AMG,Excellent

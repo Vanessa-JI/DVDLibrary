@@ -1,6 +1,6 @@
 package org.example;
 
-public class DVDLibrary extends MediaCollection{
+public class DVDLibrary implements MediaCollection {
 
     // defining default constructor
 
@@ -44,10 +44,9 @@ public class DVDLibrary extends MediaCollection{
         System.out.println("Title: " + myDVD.getTitle());
         System.out.println("Release Date: " + myDVD.getReleaseDate());
         System.out.println("MPAA Rating: " + myDVD.getMPAARating());
-        System.out.println("Director(s): " + myDVD.getDirectors());
+        System.out.println("Director: " + myDVD.getDirectorName());
         System.out.println("Studio: " + myDVD.getStudio());
         System.out.println("User Rating: " + myDVD.getUserRating());
-        System.out.println("Notes: " + myDVD.getNotes());
 
     }
 
@@ -61,6 +60,16 @@ public class DVDLibrary extends MediaCollection{
         // user can search for the DVD by title
         // if title is not found, an error message is returned and user is asked if they want to search again
         // if title is found, user is asked what they want to do with this DVD (remove, edit, display info, return to previous menu)
+
+    }
+
+    @Override
+    public void loadLibrary() {
+
+    }
+
+    @Override
+    public void saveLibrary() {
 
     }
 }
