@@ -1,11 +1,7 @@
 package org.example;
 
 import java.io.*;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
 
@@ -16,7 +12,7 @@ public class Main {
     // defining a function to load in the DVD text file -- only role is to get the txt file information into a collection
     // FileNotFoundException throws if the dvd.txt file is not found in the project folder
     // IOException throws if there are no lines in the text file to be read
-    public static HashMap loadLibrary() throws IOException {
+    public static ArrayList loadLibrary() throws IOException {
 
         // define new File, FileReader, and BufferedReader objects to read the file line by line
         File dvdLibFile = new File("dvd.txt");
@@ -46,11 +42,11 @@ public class Main {
             // create a new DVD object from this information, and add it to the DVD library
             DVD newDVD = createDVD(lineContents[0], dvdHashMap.get(lineContents[0]));
             addDVD(library, newDVD);
-            System.out.println(library.size());
+//            System.out.println(library.size());
 
         } // End of while loop
 
-        return dvdHashMap;
+        return library;
 
     } // End of loadLibrary function
 
@@ -63,7 +59,7 @@ public class Main {
 
         currDVD.setTitle(title);
         currDVD.setReleaseDate(Integer.parseInt(fieldsList[0]));
-        currDVD.setMPAARating(fieldsList[1]);
+        currDVD.setMpaaRating(fieldsList[1]);
         currDVD.setDirectorName(fieldsList[2]);
         currDVD.setStudio(fieldsList[3]);
         currDVD.setUserRating(fieldsList[4]);
@@ -74,15 +70,205 @@ public class Main {
 
     // defining a function that puts the DVD objects into an arraylist of DVD objects (adds to DVD library)
     public static void addDVD(ArrayList<DVD> dvdLibrary, DVD currDVD) {
-            dvdLibrary.add(currDVD);
+        dvdLibrary.add(currDVD);
     }
 
 
-    // defining a function to save the current DVD library into a hashmap and then into a txt file
-    public static void saveLibrary(ArrayList<DVD> dvdLibrary) {
+    // defining a function to save the current DVD library (array list of DVD objects) into a hashmap and then into a txt file
+    // need to add a try catch to handle exception
+    public static void saveLibrary(ArrayList<DVD> dvdLibrary) throws IOException {
 
+        // define the PrintWriter object -- where I am writing the data to
+        PrintWriter out = new PrintWriter(new FileWriter("newDVD.txt"));
 
-        // turn DVDLibrary into a hashmap
+        // loop through the DVDLibrary
+        for (DVD currDVD : dvdLibrary) {
+
+            // join all the strings in the array list together with commas
+            String val = new String();
+            val += currDVD.getTitle() + ",";
+            int releaseDate = currDVD.getReleaseDate();
+            val += Integer.toString(releaseDate) + ",";
+            val += currDVD.getMpaaRating() + ",";
+            val += currDVD.getDirectorName() + ",";
+            val += currDVD.getStudio() + ",";
+            val += currDVD.getUserRating();
+
+            // save this DVD's information in its own line in the text file
+            out.println(val);
+
+        }
+
+        // once all DVDs in the library have been processed, force everything to be written and close the stream
+        out.flush();
+        out.close();
+    }
+
+    public static void getNewDVD(ArrayList dvdLibrary) {
+
+        // CHANGE ALLLLLLL DATES TO LOCAL DATE FORMAT LATER, KEEP AS INTEGER FOR NOW
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+//        LocalDate ld = LocalDate.parse("02/07/2010", formatter);
+//        String formatted = ld.format(formatter);
+        // MOVE ALL SCANNERS TO THE VIEW I THINK?
+
+        // instantiate an array list to hold all the DVD information
+        String[] dvdInfo = new String[5];
+
+        System.out.println("Enter the title of the DVD to be added: ");
+        Scanner input = new Scanner(System.in);
+        String newTitle = input.nextLine();
+
+        System.out.println("Enter the release date in the form ddmmyyyy: ");
+        String newReleaseDate = input.nextLine();
+        dvdInfo[0] = newReleaseDate;
+
+        System.out.println("Enter the MPAA rating: ");
+        String mpaa = input.nextLine();
+        dvdInfo[1] = mpaa;
+
+        System.out.println("Enter the director's name: ");
+        String directorName = input.nextLine();
+        dvdInfo[2] = directorName;
+
+        System.out.println("Enter the studio name: ");
+        String studio = input.nextLine();
+        dvdInfo[3] = studio;
+
+        System.out.println("Any additional notes? Give your rating of this DVD: ");
+        String userRating = input.nextLine();
+        dvdInfo[4] = userRating;
+
+        // generate the DVD object and add it to the existing collection
+        DVD currDVD = createDVD(newTitle, dvdInfo);
+        addDVD(dvdLibrary, currDVD);
+
+    }
+
+    // define a function to remove a DVD from the collection
+    public static ArrayList removeDVD(ArrayList library) {
+
+        // Error handling (i.e. if there is no matching DVD) can be added later --
+        // assuming the user knows which DVDs are in the collection currently
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the name of the DVD you wish to remove from the collection: ");
+        String title = input.nextLine();
+
+         // removing the actual DVD
+         // loop through the DVDs in the DVD collection until the one with the matching name is found
+        for (int i = 0; i < library.size(); i++) {
+            DVD curr = (DVD) library.get(i);
+            if (curr.getTitle().equals(title)) {
+                library.remove(i);
+            }
+        }
+        return library;
+    }
+
+    public static ArrayList editInformation(ArrayList library) {
+
+        System.out.println("Enter the title of the movie you want to edit the information for: ");
+        Scanner input = new Scanner(System.in);
+        String title = input.nextLine();
+
+        DVD thisDVD = null;
+
+        // find the matching DVD
+        for (int i = 0; i < library.size(); i++) {
+            DVD curr = (DVD) library.get(i);
+            if (curr.getTitle().equals(title)) {
+                thisDVD = curr;
+                break;
+
+            }
+        }
+
+        System.out.println("\nWhat information do you want to edit?");
+        System.out.println("1. Title");
+        System.out.println("2. Release date");
+        System.out.println("3. MPAA rating");
+        System.out.println("4. Director's name");
+        System.out.println("5. Studio");
+        System.out.println("6. User rating");
+
+        int i = input.nextInt();
+
+        switch(i) {
+            case 1:
+                Scanner in = new Scanner(System.in);
+                System.out.println("\nEnter the new title: ");
+                String newTitle = in.nextLine();
+                thisDVD.setTitle(newTitle);
+                System.out.println("\nTitle set to " + "'" + newTitle + "'.");
+                break;
+
+            case 2:
+                Scanner in2 = new Scanner(System.in);
+                System.out.println("\nEnter the new release date: ");
+                String newReleaseDate = in2.nextLine();
+                thisDVD.setReleaseDate(Integer.parseInt(newReleaseDate));
+                System.out.println("\nRelease date set to " + "'" + newReleaseDate + "'.");
+                break;
+
+            case 3:
+                Scanner in3 = new Scanner(System.in);
+                System.out.println("\nEnter the new MPAA rating: ");
+                String newRating = in3.nextLine();
+                thisDVD.setMpaaRating(newRating);
+                System.out.println("\nMPAA rating set to " + "'" + newRating + "'.");
+                break;
+
+            case 4:
+                Scanner in4 = new Scanner(System.in);
+                System.out.println("\nEnter the new director's name: ");
+                String directorName = in4.nextLine();
+                thisDVD.setDirectorName(directorName);
+                System.out.println("\nDirector's name set to " + "'" + directorName + "'.");
+                break;
+
+            case 5:
+                Scanner in5 = new Scanner(System.in);
+                System.out.println("\nEnter the new studio name: ");
+                String studio = in5.nextLine();
+                thisDVD.setStudio(studio);
+                System.out.println("\nStudio name set to " + "'" + studio + "'.");
+                break;
+
+            case 6:
+                Scanner in6 = new Scanner(System.in);
+                System.out.println("\nEnter the new user rating: ");
+                String rating = in6.nextLine();
+                thisDVD.setUserRating(rating);
+                System.out.println("\nUser rating set to " + "'" + rating + "'.");
+                break;
+
+        }
+
+        return library;
+    }
+
+    // define a function to list all DVDs in the library
+    public static void listAll(ArrayList library) {
+
+        System.out.println("The DVDs in your collection are: ");
+        for (int i = 0; i < library.size(); i++) {
+            DVD curr = (DVD) library.get(i);
+            System.out.println("- " + curr.getTitle());
+        }
+
+    }
+
+    public static void main(String[] args) throws IOException {
+
+        ArrayList library = loadLibrary();
+//        getNewDVD(library);
+//        library = editInformation(library);
+        listAll(library);
+        saveLibrary(library);
+
+//        saveLibrary();
+    }
+}
         // DVD Library is just an arrayList of DVD objects
         // iterate through our arrayList one by one
         // each element is a DVD object
@@ -117,7 +303,7 @@ public class Main {
 //            // loop through the values array and add each of them as an individual attribute
 
 //            System.out.println( key );
-        }
+
             // do something with the key and value
 
         // save each element of the HashMap into a line in the text file
@@ -136,17 +322,3 @@ public class Main {
 
     // containsKey() function will be useful
 
-
-
-
-
-    public static void main(String[] args) throws IOException {
-
-        HashMap dvdHashMap = loadLibrary();
-
-
-//        saveLibrary();
-
-
-    }
-}

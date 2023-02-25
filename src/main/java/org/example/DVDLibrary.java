@@ -43,7 +43,7 @@ public class DVDLibrary implements MediaCollection {
         // get and print all the attributes of the DVD object
         System.out.println("Title: " + myDVD.getTitle());
         System.out.println("Release Date: " + myDVD.getReleaseDate());
-        System.out.println("MPAA Rating: " + myDVD.getMPAARating());
+        System.out.println("MPAA Rating: " + myDVD.getMpaaRating());
         System.out.println("Director: " + myDVD.getDirectorName());
         System.out.println("Studio: " + myDVD.getStudio());
         System.out.println("User Rating: " + myDVD.getUserRating());
@@ -62,6 +62,7 @@ public class DVDLibrary implements MediaCollection {
         // if title is found, user is asked what they want to do with this DVD (remove, edit, display info, return to previous menu)
 
     }
+
 
     @Override
     public void loadLibrary() {

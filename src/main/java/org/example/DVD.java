@@ -8,7 +8,7 @@ public class DVD {
     private String title;
     private int releaseDate;
 
-    private String MPAARating; // can take a value of G, M, PG, R, or X
+    private String mpaaRating; // can take a value of G, M, PG, R, or X
     private String directorName;
     private String studio;
 
@@ -57,12 +57,12 @@ public class DVD {
         this.releaseDate = releaseDate;
     }
 
-    public String getMPAARating() {
-        return MPAARating;
+    public String getMpaaRating() {
+        return mpaaRating;
     }
 
-    public void setMPAARating(String MPAARating) {
-        this.MPAARating = MPAARating;
+    public void setMpaaRating(String mpaaRating) {
+        this.mpaaRating = mpaaRating;
     }
 
     public String getDirectorName() {
