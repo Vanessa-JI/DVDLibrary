@@ -1,5 +1,6 @@
-package org.example;
+package org.example.Model.DTO;
 
+// This is my data transfer object class definition
 public class DVD {
 
     // defining the fields of the DVD object
@@ -30,13 +31,8 @@ public class DVD {
     // defining constructors
     // default constructor -- used when inputting DVD objects from the text input file
 
-    public DVD() {
-    }
 
     // alternative constructor -- user is adding a new DVD and adds just the title name (could add other arguments if they'd like)
-    public DVD(String title) {
-        this.title = title;
-    }
 
 
     // defining getters (accessors) and setters (mutators)

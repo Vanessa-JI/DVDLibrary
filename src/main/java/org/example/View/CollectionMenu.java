@@ -9,6 +9,7 @@ public class CollectionMenu {
         System.out.println("3. Edit an existing DVD");
         System.out.println("4. List all DVDs in collection");
         System.out.println("5. Search for DVD by title");
+        System.out.println("6. Exit");
     }
 
 }

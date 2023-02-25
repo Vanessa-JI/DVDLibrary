@@ -1,4 +1,7 @@
-package org.example;
+package org.example.Model.DAO;
+
+import org.example.Model.DTO.DVD;
+import org.example.Model.MediaCollection;
 
 public class DVDLibrary implements MediaCollection {
 

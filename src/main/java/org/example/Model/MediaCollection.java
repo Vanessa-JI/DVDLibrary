@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Model;
 
 // this is an abstract base class -- only its subclasses can be inherited
 // would be useful if we had multiple LibraryCollections with similar functionality e.g. CDLibrary, VinylLibrary, etc.

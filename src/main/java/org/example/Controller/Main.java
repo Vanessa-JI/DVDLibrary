@@ -1,4 +1,6 @@
-package org.example;
+package org.example.Controller;
+
+import org.example.Model.DTO.DVD;
 
 import java.io.*;
 import java.util.*;
@@ -255,15 +257,67 @@ public class Main {
             DVD curr = (DVD) library.get(i);
             System.out.println("- " + curr.getTitle());
         }
+    }
+
+    public static void showInformation(ArrayList library) {
+        System.out.println("Enter the title of the DVD you want to view the information of: ");
+        Scanner input = new Scanner(System.in);
+        String title = input.nextLine();
+        DVD thisDVD = null;
+        // find the matching DVD
+        for (int i = 0; i < library.size(); i++) {
+            DVD curr = (DVD) library.get(i);
+            if (curr.getTitle().equals(title)) {
+                thisDVD = curr;
+                break;
+            }
+        }
+
+        System.out.println("\nDVD title: " + title);
+        System.out.println("Release date: " + thisDVD.getReleaseDate());
+        System.out.println("MPAA Rating: " + thisDVD.getMpaaRating());
+        System.out.println("Director's name: " + thisDVD.getDirectorName());
+        System.out.println("Studio: " + thisDVD.getStudio());
+        System.out.println("User rating/notes: " + thisDVD.getUserRating());
 
     }
+
+    public static void searchByTitle(ArrayList library) {
+
+        System.out.println("Enter the title of the DVD you would like to search for: ");
+        Scanner input = new Scanner(System.in);
+        String title = input.nextLine();
+
+        DVD thisDVD = null;
+
+        // find the matching DVD
+        for (int i = 0; i < library.size(); i++) {
+            DVD curr = (DVD) library.get(i);
+            if (curr.getTitle().equals(title)) {
+                thisDVD = curr;
+                break;
+            }
+        }
+
+        // once we get the DVD, we ask -- what would you like to do:
+        /*
+        secondary menu:
+            1. Remove DVD from collection
+            2. Display information
+            3. Edit information
+            4. Back to Main Menu
+         */
+
+
+    }
+
 
     public static void main(String[] args) throws IOException {
 
         ArrayList library = loadLibrary();
 //        getNewDVD(library);
 //        library = editInformation(library);
-        listAll(library);
+        showInformation(library);
         saveLibrary(library);
 
 //        saveLibrary();
