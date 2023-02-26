@@ -4,10 +4,8 @@ package org.example.dao;
 // DVDLibraryDaoException is the derived class
 public class DVDLibraryDaoException extends Exception {
 
-        public DVDLibraryDaoException(String message) {
-            super(message);
-        }
-
+        // exception is thrown when an error is encountered in reading in or writing the library from/to a comma
+        // separated text file.
         public DVDLibraryDaoException(String message, Throwable cause) {
             super(message, cause);
         }
