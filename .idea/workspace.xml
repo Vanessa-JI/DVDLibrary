@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e70f13c1-172a-47eb-a938-ebf4e0b49781" name="Changes" comment="Finished commenting DVDLibraryDaoException class">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/DVDLibraryDaoFileImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/DVDLibraryDaoFileImpl.java" afterDir="false" />
+    <list default="true" id="e70f13c1-172a-47eb-a938-ebf4e0b49781" name="Changes" comment="Finished commenting DVD (DTO) class">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DVDLibraryDaoException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ui/UserIO.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +238,21 @@
       <option name="project" value="LOCAL" />
       <updated>1677454451163</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Finished commenting DVDLibraryDaoFileImpl class">
+      <created>1677455366466</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1677455366467</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Finished commenting DVD (DTO) class">
+      <created>1677455500322</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1677455500322</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -274,7 +288,9 @@
     <MESSAGE value="Finished commenting DVDLibraryController class" />
     <MESSAGE value="Finished commenting DVDLibraryDao interface" />
     <MESSAGE value="Finished commenting DVDLibraryDaoException class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished commenting DVDLibraryDaoException class" />
+    <MESSAGE value="Finished commenting DVDLibraryDaoFileImpl class" />
+    <MESSAGE value="Finished commenting DVD (DTO) class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished commenting DVD (DTO) class" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DVDLibrary$Main.ic" NAME="Main Coverage Results" MODIFIED="1677314578918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
