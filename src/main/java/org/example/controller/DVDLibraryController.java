@@ -9,6 +9,7 @@ import org.example.dao.DVDLibraryDaoFileImpl;
 import org.example.dto.DVD;
 import org.example.ui.DVDLibraryView;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DVDLibraryController {
@@ -17,6 +18,12 @@ public class DVDLibraryController {
     // This is a use of composition -- DVDLibraryController has-a DVDLibraryView
     private DVDLibraryView view = new DVDLibraryView();
     private DVDLibraryDao dao = new DVDLibraryDaoFileImpl();
+
+    private void listDVDs() {
+        view.displayListAllBanner();
+        ArrayList<DVD> dvdList = dao.getAllDVDs();
+        view.listAll(dvdList);
+    }
 
     private void createDVD() {
         view.displayCreateDVDBanner();
@@ -49,7 +56,7 @@ public class DVDLibraryController {
                     System.out.println("Edit existing DVD");
                     break;
                 case 4:
-                    System.out.println("List all DVDs");
+                    listDVDs();
                     break;
                 case 5:
                     System.out.println("Search for a DVD");

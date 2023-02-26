@@ -6,6 +6,7 @@ package org.example.ui;
 
 import org.example.dto.DVD;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 // define a member that is of type UserIO
@@ -83,6 +84,18 @@ public class DVDLibraryView {
     public void displayCreateSuccessBanner() {
         System.out.println("DVD successfully created.");
         // FIND A WAY FOR THE CLICK ENTER THIGN TO WORK
+    }
+
+// define a function to list all DVDs in the library
+    public static void listAll(ArrayList<DVD> dvds) {
+        System.out.println("The DVDs in your collection are: ");
+        for (DVD currentDVD: dvds) {
+            System.out.println("- " + currentDVD.getTitle());
+        }
+    } // End of listAll method
+
+    public void displayListAllBanner() {
+        System.out.println("=== List all DVDs ===\n");
     }
 
 } // End of class definition
