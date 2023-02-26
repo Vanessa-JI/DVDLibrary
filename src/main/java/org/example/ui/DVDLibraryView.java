@@ -1,9 +1,8 @@
-package org.example.ui;
-
 // This class handles all the UI logic
 // Uses UserIO interface to interact with the user -- completely aware of implementation details
+// No other component is allowed to interact with the user
 
-
+package org.example.ui;
 import org.example.dto.DVD;
 
 import java.util.ArrayList;
@@ -11,6 +10,14 @@ import java.util.Scanner;
 
 // define a member that is of type UserIO
 public class DVDLibraryView {
+
+    public void displayLoadingBanner() {
+        System.out.println("=== Loading in DVD Library ===");
+    }
+
+    public void displayWritingBanner() {
+        System.out.println("=== Saving DVD Library ===");
+    }
 
     public void displayEditDVDBanner() {
         System.out.println("=== Edit existing DVD ===");

@@ -37,6 +37,9 @@ public class DVD {
 
     }
 
+    public DVD(String title) {
+        this.title = title;
+    }
 
     // alternative constructor -- user is adding a new DVD and adds just the title name (could add other arguments if they'd like)
 

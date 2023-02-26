@@ -2,15 +2,91 @@ package org.example.dao;
 
 import org.example.dto.DVD;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 
 // Text-file specific implementation of the DVDLibraryDao interface
 
 public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
 
+    public static final String LIBRARY_FILE = "dvd.txt";
+    public static final String DELIMITER = ",";
+
     // defining a private member to the class
     private HashMap<String, DVD> dvds = new HashMap<>();
+
+    // DVD information unmarshalling --
+    private DVD unmarshallDVD(String dvdAsText) {
+        String[] dvdTokens = dvdAsText.split(DELIMITER);
+        String title = dvdTokens[0];
+        DVD dvdFromFile = new DVD(title);
+        dvdFromFile.setReleaseDate(Integer.parseInt(dvdTokens[1]));
+        dvdFromFile.setMpaaRating(dvdTokens[2]);
+        dvdFromFile.setDirectorName(dvdTokens[3]);
+        dvdFromFile.setStudio(dvdTokens[4]);
+        dvdFromFile.setUserRating(dvdTokens[5]);
+        return dvdFromFile;
+    }
+
+    // defining a method to read the library file into local memory
+    public void loadLibrary() throws DVDLibraryDaoException {
+        Scanner scanner;
+        try {
+            scanner = new Scanner(new BufferedReader(new FileReader(LIBRARY_FILE)));
+        } catch (FileNotFoundException e) {
+            throw new DVDLibraryDaoException("Could not load DVD Library file.", e);
+        }
+        String currentLine;
+        DVD currentDVD;
+        while (scanner.hasNextLine()) {
+            currentLine = scanner.nextLine();
+            currentDVD = unmarshallDVD(currentLine);
+
+            dvds.put(currentDVD.getTitle(), currentDVD);
+        }
+        scanner.close();
+    }
+
+    private String marshallDVD(DVD aDVD){
+        // Turning each line of text in the input file into a DVD object
+        String dvdAsText = aDVD.getTitle() + DELIMITER;
+        dvdAsText += aDVD.getReleaseDate() + DELIMITER;
+        dvdAsText += aDVD.getMpaaRating() + DELIMITER;
+        dvdAsText += aDVD.getDirectorName() + DELIMITER;
+        dvdAsText += aDVD.getStudio() + DELIMITER;
+        dvdAsText += aDVD.getUserRating();
+
+        return dvdAsText;
+    }
+
+    /**
+     * Writes all DVDs in the libraries at the end of program execution to a LIBRARY_FILE.
+     *
+     * throws ClassRosterDaoException if an error occurs writing to the file
+     */
+    public void writeLibrary() throws DVDLibraryDaoException {
+
+        PrintWriter out;
+
+        try {
+            out = new PrintWriter(new FileWriter(LIBRARY_FILE));
+        } catch (IOException e) {
+            throw new DVDLibraryDaoException(
+                    "Could not save DVD data.", e);
+        }
+
+        // Write out the DVD objects to the roster file.
+        String dvdAsText;
+        ArrayList<DVD> dvdList = this.getAllDVDs();
+        for (DVD currentDVD : dvdList) {
+            dvdAsText = marshallDVD(currentDVD);
+            out.println(dvdAsText);
+            out.flush();
+        }
+        out.close();
+    }
 
     @Override
     public DVD addDVD(String title, DVD currDVD) {

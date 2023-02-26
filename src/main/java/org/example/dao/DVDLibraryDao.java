@@ -34,6 +34,13 @@ public interface DVDLibraryDao {
      */
     DVD editExisting(String title);
 
+    /**
+     * Load the text file
+     */
+    void loadLibrary() throws DVDLibraryDaoException;
+
+    void writeLibrary() throws DVDLibraryDaoException;
+
 //    // providing implementations of the methods (READ UP ON MVC)
 //    public void loadLibrary();
 //
