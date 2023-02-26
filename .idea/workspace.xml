@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e70f13c1-172a-47eb-a938-ebf4e0b49781" name="Changes" comment="Arranged classes into appropriate packages">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/DVDLibraryDaoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/DVDLibraryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ui/UserIO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ui/UserIOConsoleImpl.java" afterDir="false" />
+    <list default="true" id="e70f13c1-172a-47eb-a938-ebf4e0b49781" name="Changes" comment="Updated package arrangement">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/DAO/DVDLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/DVDLibraryDaoFileImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/DTO/DVD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dto/DVD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/MediaCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/DVDLibraryDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/View/CollectionMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ui/DVDLibraryView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/DVDLibraryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/DVDLibraryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ui/DVDLibraryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ui/DVDLibraryView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ui/UserIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ui/UserIO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ui/UserIOConsoleImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ui/UserIOConsoleImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677363253477</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Updated package arrangement">
+      <created>1677371302334</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1677371302334</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -161,7 +164,8 @@
     <MESSAGE value="Added addDVD and createDVD methods" />
     <MESSAGE value="Finished addDVD, removeDVD, editDVD, and listAll methods" />
     <MESSAGE value="Arranged classes into appropriate packages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Arranged classes into appropriate packages" />
+    <MESSAGE value="Updated package arrangement" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated package arrangement" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DVDLibrary$Main.ic" NAME="Main Coverage Results" MODIFIED="1677314578918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
