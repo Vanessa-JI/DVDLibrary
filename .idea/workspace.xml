@@ -4,16 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e70f13c1-172a-47eb-a938-ebf4e0b49781" name="Changes" comment="Finished addDVD, removeDVD, editDVD, and listAll methods">
+    <list default="true" id="e70f13c1-172a-47eb-a938-ebf4e0b49781" name="Changes" comment="Arranged classes into appropriate packages">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/DVDLibraryDaoException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/DVDLibraryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ui/UserIO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ui/UserIOConsoleImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DVD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/DVD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DVDLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/DVDLibrary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Date.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Director.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Controller/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MediaCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/MediaCollection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Note.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/View/CollectionMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/View/CollectionMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/DAO/DVDLibrary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/DVDLibraryDaoFileImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/DTO/DVD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dto/DVD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/MediaCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/DVDLibraryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/View/CollectionMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ui/DVDLibraryView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +24,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -56,14 +58,17 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="org.example.View" />
+    </key>
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Controller.Main" />
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.App" />
       <module name="DVDLibrary" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.Model.DTO.*" />
+          <option name="PATTERN" value="org.example.model.DTO.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -128,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677348253447</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Arranged classes into appropriate packages">
+      <created>1677363253477</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1677363253477</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -148,7 +160,8 @@
     <MESSAGE value="Added method signatures for MediaCollection class" />
     <MESSAGE value="Added addDVD and createDVD methods" />
     <MESSAGE value="Finished addDVD, removeDVD, editDVD, and listAll methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished addDVD, removeDVD, editDVD, and listAll methods" />
+    <MESSAGE value="Arranged classes into appropriate packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arranged classes into appropriate packages" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DVDLibrary$Main.ic" NAME="Main Coverage Results" MODIFIED="1677314578918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

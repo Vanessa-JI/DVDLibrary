@@ -1,9 +1,10 @@
-package org.example.Model.DAO;
+package org.example.dao;
 
-import org.example.Model.DTO.DVD;
-import org.example.Model.MediaCollection;
+import org.example.dto.DVD;
 
-public class DVDLibrary implements MediaCollection {
+// Text-file specific implementation of the DVDLibraryDao interface
+
+public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
 
     // defining default constructor
 

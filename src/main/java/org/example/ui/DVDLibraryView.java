@@ -1,6 +1,11 @@
-package org.example.View;
+package org.example.ui;
 
-public class CollectionMenu {
+// This class handles all the UI logic
+// Uses UserIO interface to interact with the user -- completely aware of implementation ddetails
+
+
+// define a member that is of type UserIO
+public class DVDLibraryView {
 
     public static void showMainMenu() {
         System.out.println("==== DVD LIBRARY MAIN MENU ====");

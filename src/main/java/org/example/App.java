@@ -1,11 +1,11 @@
-package org.example.Controller;
+package org.example;
 
-import org.example.Model.DTO.DVD;
+import org.example.dto.DVD;
 
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class App {
 
     // defining a class attribute -- dvdLibrary
     // define the hashmap (key:value == title:array of other attributes) and add the values in -- UNCOMMENT THE ATTRIBUTE DEFINITION

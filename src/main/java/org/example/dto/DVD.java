@@ -1,6 +1,7 @@
-package org.example.Model.DTO;
+package org.example.dto;
 
 // This is my data transfer object class definition
+// holds all DVD information
 public class DVD {
 
     // defining the fields of the DVD object
