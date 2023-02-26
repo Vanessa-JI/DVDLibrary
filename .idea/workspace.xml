@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e70f13c1-172a-47eb-a938-ebf4e0b49781" name="Changes" comment="Partially implemented editInformation functionality -- library updates not reflecting">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="e70f13c1-172a-47eb-a938-ebf4e0b49781" name="Changes" comment="Working editInformation functionality">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/DVDLibraryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/DVDLibraryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ui/DVDLibraryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ui/DVDLibraryView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +188,21 @@
       <option name="project" value="LOCAL" />
       <updated>1677422387942</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Working editInformation functionality">
+      <created>1677439611721</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1677439611721</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Working editInformation functionality">
+      <created>1677439664065</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1677439664065</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -218,7 +231,8 @@
     <MESSAGE value="Fully implemented search by title functionality" />
     <MESSAGE value="Fully implemented remove DVD functionality, started working on editInformation functionality" />
     <MESSAGE value="Partially implemented editInformation functionality -- library updates not reflecting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Partially implemented editInformation functionality -- library updates not reflecting" />
+    <MESSAGE value="Working editInformation functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working editInformation functionality" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DVDLibrary$Main.ic" NAME="Main Coverage Results" MODIFIED="1677314578918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
