@@ -1,5 +1,7 @@
 package org.example.dto;
 
+import org.example.dao.DVDLibraryDao;
+
 // This is my data transfer object class definition
 // holds all DVD information
 public class DVD {
@@ -31,6 +33,9 @@ public class DVD {
 
     // defining constructors
     // default constructor -- used when inputting DVD objects from the text input file
+    public DVD() {
+
+    }
 
 
     // alternative constructor -- user is adding a new DVD and adds just the title name (could add other arguments if they'd like)

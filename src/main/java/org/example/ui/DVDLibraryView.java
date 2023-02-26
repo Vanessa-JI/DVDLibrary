@@ -24,4 +24,63 @@ public class DVDLibraryView {
 
     } // End of getMenuSelection function
 
+    // defining a new function that takes a key value pair (maybe from the hashmap) and turns it into a DVD object
+    public DVD createDVD(String title, String[] fieldsList) {
+
+        // instantiating a new DVD object
+        DVD currDVD = new DVD();
+        currDVD.setTitle(title);
+        currDVD.setReleaseDate(Integer.parseInt(fieldsList[0]));
+        currDVD.setMpaaRating(fieldsList[1]);
+        currDVD.setDirectorName(fieldsList[2]);
+        currDVD.setStudio(fieldsList[3]);
+        currDVD.setUserRating(fieldsList[4]);
+
+        return currDVD;
+    } // End of createDVD method
+
+    public DVD getNewDVD() {
+
+        // instantiate an array list to hold all the DVD information
+        String[] dvdInfo = new String[5];
+
+        System.out.println("Enter the title of the DVD to be added: ");
+        Scanner input = new Scanner(System.in);
+        String newTitle = input.nextLine();
+
+        System.out.println("Enter the release date in the form ddmmyyyy: ");
+        String newReleaseDate = input.nextLine();
+        dvdInfo[0] = newReleaseDate;
+
+        System.out.println("Enter the MPAA rating: ");
+        String mpaa = input.nextLine();
+        dvdInfo[1] = mpaa;
+
+        System.out.println("Enter the director's name: ");
+        String directorName = input.nextLine();
+        dvdInfo[2] = directorName;
+
+        System.out.println("Enter the studio name: ");
+        String studio = input.nextLine();
+        dvdInfo[3] = studio;
+
+        System.out.println("Any additional notes? Give your rating of this DVD: ");
+        String userRating = input.nextLine();
+        dvdInfo[4] = userRating;
+
+        // generate the DVD object and add it to the existing collection
+        DVD currDVD = createDVD(newTitle, dvdInfo);
+
+        return currDVD;
+    } // End of getNewDVD method
+
+    public void displayCreateDVDBanner() {
+        System.out.println("=== Create Student ===\n");
+    }
+
+    public void displayCreateSuccessBanner() {
+        System.out.println("DVD successfully created.");
+        // FIND A WAY FOR THE CLICK ENTER THIGN TO WORK
+    }
+
 } // End of class definition

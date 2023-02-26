@@ -71,8 +71,9 @@ import java.util.*;
 //
 //
 //// defining a function that puts the DVD objects into an arraylist of DVD objects (adds to DVD library)
-//public static void addDVD(ArrayList<DVD> dvdLibrary, DVD currDVD) {
+//public static ArrayList<> addDVD(ArrayList<DVD> dvdLibrary, DVD currDVD) {
 //        dvdLibrary.add(currDVD);
+//        return dvdLibrary;
 //        }
 //
 //

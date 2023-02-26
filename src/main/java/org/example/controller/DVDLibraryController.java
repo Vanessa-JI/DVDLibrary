@@ -4,6 +4,8 @@ package org.example.controller;
 // it knows what needs to and can be done by each component
 // uses DVDLibrary interface to reference the DAO -- unaware of implementation details
 
+import org.example.dao.DVDLibraryDao;
+import org.example.dao.DVDLibraryDaoFileImpl;
 import org.example.ui.DVDLibraryView;
 
 import java.util.Scanner;
@@ -13,6 +15,14 @@ public class DVDLibraryController {
     // define two members -- one is DVDLibrary, the other is DVDLibraryView??????
     // This is a use of composition -- DVDLibraryController has-a DVDLibraryView
     private DVDLibraryView view = new DVDLibraryView();
+    private DVDLibraryDao dao = new DVDLibraryDaoFileImpl();
+
+    private void createDVD() {
+        view.displayCreateDVDBanner();
+        DVD newDVD = view.getNewDVD();
+        dao.addDVD(newDVD.getTitle(), newDVD);
+        view.displayCreateSuccessBanner();
+    }
 
     // private method to get the final menu selection
     private int getUserSelection() {
@@ -29,7 +39,7 @@ public class DVDLibraryController {
 
             switch (selection) {
                 case 1:
-                    System.out.println("Add DVD");
+                    createDVD();
                     break;
                 case 2:
                     System.out.println("Remove DVD");
