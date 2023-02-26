@@ -75,7 +75,7 @@ public class DVDLibraryController {
                     removeDVD();
                     break;
                 case 3:
-                    System.out.println("Edit existing DVD");
+                    editInformation();
                     break;
                 case 4:
                     listDVDs();

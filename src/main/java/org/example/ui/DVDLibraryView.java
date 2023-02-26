@@ -148,7 +148,7 @@ public class DVDLibraryView {
     public void editDVDInformation(DVD dvd) {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("What information do you want to edit?");
+        System.out.println("\nWhat information do you want to edit?");
         System.out.println("1. Title");
         System.out.println("2. Release date");
         System.out.println("3. MPAA Rating");
@@ -157,8 +157,8 @@ public class DVDLibraryView {
         System.out.println("6. User rating/notes");
 
         int selection = input.nextInt();
-//
-        switch(selection) {
+
+        switch (selection) {
             case 1:
                 Scanner in = new Scanner(System.in);
                 System.out.println("\nEnter the new title: ");
@@ -208,7 +208,5 @@ public class DVDLibraryView {
                 break;
         } // End of switch statement
 
-        }
-    }
-
+    } // End of editDVDInformation method
 } // End of class definition
