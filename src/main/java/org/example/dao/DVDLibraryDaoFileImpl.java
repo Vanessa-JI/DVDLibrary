@@ -1,27 +1,30 @@
+// Text-file specific implementation of the DVDLibraryDao interface
+
 package org.example.dao;
-
 import org.example.dto.DVD;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
-// Text-file specific implementation of the DVDLibraryDao interface
-
+// 'implements' keyword shows inheritance relationship
 public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
 
+    // defining two public constant class attributes and a private attribute
     public static final String LIBRARY_FILE = "dvd.txt";
     public static final String DELIMITER = ",";
-
-    // defining a private member to the class
     private HashMap<String, DVD> dvds = new HashMap<>();
 
-    // DVD information unmarshalling --
+    // method to perform DVD object information unmarshalling
     private DVD unmarshallDVD(String dvdAsText) {
+        // split the line read from text file into tokens (DVD object attributes)
         String[] dvdTokens = dvdAsText.split(DELIMITER);
+
+        // generate a new DVD object based on the title retrieved from the text file
         String title = dvdTokens[0];
         DVD dvdFromFile = new DVD(title);
+
+        // set all other instance attributes accordingly and return the DVD object created
         dvdFromFile.setReleaseDate(Integer.parseInt(dvdTokens[1]));
         dvdFromFile.setMpaaRating(dvdTokens[2]);
         dvdFromFile.setDirectorName(dvdTokens[3]);
@@ -30,9 +33,14 @@ public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
         return dvdFromFile;
     }
 
-    // defining a method to read the library file into local memory
+    // defining a method to read the library file from comma-separated text file into local memory
+    // exception is thrown if there is an error reading the text file
     public void loadLibrary() throws DVDLibraryDaoException {
+
+        // define a new scanner object to read text file line by line
         Scanner scanner;
+
+        // try-catch block handles the exception and prints out an error message if the text file cannot be read
         try {
             scanner = new Scanner(new BufferedReader(new FileReader(LIBRARY_FILE)));
         } catch (FileNotFoundException e) {
@@ -40,16 +48,19 @@ public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
         }
         String currentLine;
         DVD currentDVD;
+
+        // read the text file line by line until the end and unmarshall each DVD object from the information in
+        // the current line from the text file
         while (scanner.hasNextLine()) {
             currentLine = scanner.nextLine();
             currentDVD = unmarshallDVD(currentLine);
-
-            dvds.put(currentDVD.getTitle(), currentDVD);
+            dvds.put(currentDVD.getTitle(), currentDVD); // add this DVD object to the library of DVDs
         }
         scanner.close();
     }
 
-    private String marshallDVD(DVD aDVD){
+    // defining a function to perform data marshalling
+    private String marshallDVD(DVD aDVD) {
         // Turning each line of text in the input file into a DVD object
         String dvdAsText = aDVD.getTitle() + DELIMITER;
         dvdAsText += aDVD.getReleaseDate() + DELIMITER;
@@ -58,18 +69,15 @@ public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
         dvdAsText += aDVD.getStudio() + DELIMITER;
         dvdAsText += aDVD.getUserRating();
 
-        return dvdAsText;
+        return dvdAsText; // return a String object that can be saved in a text file
     }
 
-    /**
-     * Writes all DVDs in the libraries at the end of program execution to a LIBRARY_FILE.
-     *
-     * throws ClassRosterDaoException if an error occurs writing to the file
-     */
+    // Writes all DVDs in the libraries at the end of program execution to a LIBRARY_FILE.
+    // throws ClassRosterDaoException if an error occurs writing to the file
     public void writeLibrary() throws DVDLibraryDaoException {
+        PrintWriter out; // defining a PrintWriter object to save each line of text to
 
-        PrintWriter out;
-
+        // try-catch block handles an exception if DVD data cannot be saved
         try {
             out = new PrintWriter(new FileWriter(LIBRARY_FILE));
         } catch (IOException e) {
@@ -77,13 +85,13 @@ public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
                     "Could not save DVD data.", e);
         }
 
-        // Write out the DVD objects to the roster file.
+        // Write out the DVD objects to the library file
         String dvdAsText;
         ArrayList<DVD> dvdList = this.getAllDVDs();
         for (DVD currentDVD : dvdList) {
             dvdAsText = marshallDVD(currentDVD);
             out.println(dvdAsText);
-            out.flush();
+            out.flush(); // force line to be written to file
         }
         out.close();
     }
@@ -113,77 +121,4 @@ public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
     public DVD editExisting(String title) {
         return null;
     }
-
-
-    // defining default constructor
-//
-//    // defining static (class) methods
-//
-//
-//    // defining non-static (instance) methods
-//    // addDVD takes in a DVD object and adds it to the collection
-//    // SINCE THESE ALL REQUIRE AN INSTANCE OF DVD, SHOULD I MOVE THEM TO THE DVD CLASS?
-//    // MAY NEED TO MOVE ALL OF THESE METHODS INTO THE MEDIA CONTROLLER CLASS????
-//    public void addDVD(DVD dvdToAdd) {
-//
-//        // if the DVD name has already been in the library, ask the user if they want to overwrite
-//
-//        // print a success message if the user has successfully added a new DVD
-//    }
-//
-//    // removeDVD removes an existing DVD object from the collection
-//    public void removeDVD(DVD dvdToBeRemoved) {
-//
-//        // attempt to remove DVD
-//        // if DVD is not in library, throw an error message and ask for a new DVD name
-//        // otherwise, remove the DVD from the library and give a successful removal message
-//
-//    }
-//
-//    // editDVD takes in a DVD object and asks the user what they want to edit, calling the appropriate setter function
-//    public void editDVD(DVD dvdToEdit) {
-//
-//        // user inputs the name of the DVD they want to edit
-//        // user can then select which property they want to edit
-//        // user is shown the current value of the property and prompted to input what they want to change the property to
-//        // property is edited using setter method
-//        // user is shown the new property's value
-//
-//    }
-//
-//    public void displayInfo(DVD myDVD) {
-//
-//        // get and print all the attributes of the DVD object
-//        System.out.println("Title: " + myDVD.getTitle());
-//        System.out.println("Release Date: " + myDVD.getReleaseDate());
-//        System.out.println("MPAA Rating: " + myDVD.getMpaaRating());
-//        System.out.println("Director: " + myDVD.getDirectorName());
-//        System.out.println("Studio: " + myDVD.getStudio());
-//        System.out.println("User Rating: " + myDVD.getUserRating());
-//
-//    }
-//
-//    public void listAllDVDs() {
-//
-//        // list all the DVDs in the library
-//    }
-//
-//    public void searchForDVD(String title) {
-//
-//        // user can search for the DVD by title
-//        // if title is not found, an error message is returned and user is asked if they want to search again
-//        // if title is found, user is asked what they want to do with this DVD (remove, edit, display info, return to previous menu)
-//
-//    }
-//
-//
-//    @Override
-//    public void loadLibrary() {
-//
-//    }
-//
-//    @Override
-//    public void saveLibrary() {
-//
-//    }
-}
+} // End of class definition
