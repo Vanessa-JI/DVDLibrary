@@ -23,8 +23,11 @@ public class DVDLibraryController {
         view.displayEditDVDBanner();
         String title = view.getTitleToSearch();
         DVD dvd = dao.getDVD(title);
+        dao.removeDVD(title);
         view.displayDVD(dvd);
-        view.editDVDInformation(dvd);
+        DVD newDVD = view.editDVDInformation(dvd);
+        dao.addDVD(newDVD.getTitle(), newDVD);
+        // WANT TO SOMEHOW REMOVE THE OLD DVD AND THEN SOMEHOW ADD THE NEW UPDATED ONE
     }
 
     public void removeDVD() {

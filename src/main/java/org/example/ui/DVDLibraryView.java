@@ -145,7 +145,7 @@ public class DVDLibraryView {
     } // End of display DVD method
 
 
-    public void editDVDInformation(DVD dvd) {
+    public DVD editDVDInformation(DVD dvd) {
         Scanner input = new Scanner(System.in);
 
         System.out.println("\nWhat information do you want to edit?");
@@ -207,6 +207,8 @@ public class DVDLibraryView {
                 System.out.println("\nUser rating set to " + "'" + rating + "'.");
                 break;
         } // End of switch statement
+
+        return dvd;
 
     } // End of editDVDInformation method
 } // End of class definition
