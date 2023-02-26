@@ -1,51 +1,28 @@
-package org.example.dto;
-
-import org.example.dao.DVDLibraryDao;
-
 // This is my data transfer object class definition
 // holds all DVD information
+
+package org.example.dto;
 public class DVD {
 
     // defining the fields of the DVD object
     // each attribute is a non-static (instance) property since each DVD has a different value for each field
-    // COMMENT ON EACH PART AND WHY IT WAS CHOSEN I.E. PUBLIC, STATIC ETC
     private String title;
     private int releaseDate;
-
-    private String mpaaRating; // can take a value of G, M, PG, R, or X
+    private String mpaaRating;
     private String directorName;
     private String studio;
-
     private String userRating;
-
-
-
-
-//    // there may be multiple directors with first and last names, therefore the director is modelled as an array of directors
-//    // MAY NEED TO CHANGE THIS TO AN ARRAY LIST TO MAKE IT DYNAMIC
-//    private Director[] directors;
-//
-//    // release date has a day, month, and year, so the date is modelled as an object
-//    private Date releaseDate;
-//
-//    // SEE IF IT'S NECESSARY TO MODEL THE NOTES AS AN OBJECT ALSO
-//    private Note notes;
 
     // defining constructors
     // default constructor -- used when inputting DVD objects from the text input file
-    public DVD() {
+    public DVD() {}
 
-    }
-
+    // constructor that takes in the title of a DVD only and generates an object from this
     public DVD(String title) {
         this.title = title;
     }
 
-    // alternative constructor -- user is adding a new DVD and adds just the title name (could add other arguments if they'd like)
-
-
-    // defining getters (accessors) and setters (mutators)
-
+    // defining getters (accessors) and setters (mutators) for all instance attributes
     public String getTitle() {
         return title;
     }
@@ -93,6 +70,4 @@ public class DVD {
     public void setUserRating(String userRating) {
         this.userRating = userRating;
     }
-
-
 }
