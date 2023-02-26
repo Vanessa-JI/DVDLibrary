@@ -19,6 +19,21 @@ public class DVDLibraryController {
     private DVDLibraryView view = new DVDLibraryView();
     private DVDLibraryDao dao = new DVDLibraryDaoFileImpl();
 
+    public void editInformation() {
+        view.displayEditDVDBanner();
+        String title = view.getTitleToSearch();
+        DVD dvd = dao.getDVD(title);
+        view.displayDVD(dvd);
+        view.editDVDInformation(dvd);
+    }
+
+    public void removeDVD() {
+        view.displayRemoveDVDBanner();
+        String title = view.getTitleToSearch();
+        DVD dvd = dao.removeDVD(title);
+        view.displayRemoveResults(dvd);
+    }
+
     private void viewDVD() {
         view.displayGetDVDBanner();
         String title = view.getTitleToSearch();
@@ -57,7 +72,7 @@ public class DVDLibraryController {
                     createDVD();
                     break;
                 case 2:
-                    System.out.println("Remove DVD");
+                    removeDVD();
                     break;
                 case 3:
                     System.out.println("Edit existing DVD");

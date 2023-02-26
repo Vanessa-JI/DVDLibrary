@@ -30,6 +30,11 @@ public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
 
     @Override
     public DVD removeDVD(String title) {
+        return dvds.remove(title);
+    }
+
+    @Override
+    public DVD editExisting(String title) {
         return null;
     }
 

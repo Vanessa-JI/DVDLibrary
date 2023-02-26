@@ -29,6 +29,11 @@ public interface DVDLibraryDao {
      */
     DVD removeDVD(String title);
 
+    /**
+     *
+     */
+    DVD editExisting(String title);
+
 //    // providing implementations of the methods (READ UP ON MVC)
 //    public void loadLibrary();
 //

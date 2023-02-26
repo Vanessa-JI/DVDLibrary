@@ -1,7 +1,7 @@
 package org.example.ui;
 
 // This class handles all the UI logic
-// Uses UserIO interface to interact with the user -- completely aware of implementation ddetails
+// Uses UserIO interface to interact with the user -- completely aware of implementation details
 
 
 import org.example.dto.DVD;
@@ -11,6 +11,27 @@ import java.util.Scanner;
 
 // define a member that is of type UserIO
 public class DVDLibraryView {
+
+    public void displayEditDVDBanner() {
+        System.out.println("=== Edit existing DVD ===");
+    }
+
+    public void editInformation() {
+        /// PUT THE FUNCTION I DEFINED AT THE BOTTOM UP HERE
+    }
+
+    public void displayRemoveDVDBanner() {
+        System.out.println("=== Remove DVD ===");
+    }
+
+    public void displayRemoveResults(DVD dvd) {
+        if (dvd != null) {
+            String title = dvd.getTitle();
+            System.out.println("\n'" + title + "' successfully removed.");
+        } else {
+            System.out.println("DVD not found.");
+        }
+    }
 
     public int getMenuSelection() {
 
@@ -122,5 +143,72 @@ public class DVDLibraryView {
             System.out.println("DVD not found in library. Please enter another title.");
         }
     } // End of display DVD method
+
+
+    public void editDVDInformation(DVD dvd) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("What information do you want to edit?");
+        System.out.println("1. Title");
+        System.out.println("2. Release date");
+        System.out.println("3. MPAA Rating");
+        System.out.println("4. Director's name");
+        System.out.println("5. Studio");
+        System.out.println("6. User rating/notes");
+
+        int selection = input.nextInt();
+//
+        switch(selection) {
+            case 1:
+                Scanner in = new Scanner(System.in);
+                System.out.println("\nEnter the new title: ");
+                String newTitle = in.nextLine();
+                dvd.setTitle(newTitle);
+                System.out.println("\nTitle set to " + "'" + newTitle + "'.");
+                break;
+
+            case 2:
+                Scanner in2 = new Scanner(System.in);
+                System.out.println("\nEnter the new release date: ");
+                String newReleaseDate = in2.nextLine();
+                dvd.setReleaseDate(Integer.parseInt(newReleaseDate));
+                System.out.println("\nRelease date set to " + "'" + newReleaseDate + "'.");
+                break;
+
+            case 3:
+                Scanner in3 = new Scanner(System.in);
+                System.out.println("\nEnter the new MPAA rating: ");
+                String newRating = in3.nextLine();
+                dvd.setMpaaRating(newRating);
+                System.out.println("\nMPAA rating set to " + "'" + newRating + "'.");
+                break;
+
+            case 4:
+                Scanner in4 = new Scanner(System.in);
+                System.out.println("\nEnter the new director's name: ");
+                String directorName = in4.nextLine();
+                dvd.setDirectorName(directorName);
+                System.out.println("\nDirector's name set to " + "'" + directorName + "'.");
+                break;
+
+            case 5:
+                Scanner in5 = new Scanner(System.in);
+                System.out.println("\nEnter the new studio name: ");
+                String studio = in5.nextLine();
+                dvd.setStudio(studio);
+                System.out.println("\nStudio name set to " + "'" + studio + "'.");
+                break;
+
+            case 6:
+                Scanner in6 = new Scanner(System.in);
+                System.out.println("\nEnter the new user rating: ");
+                String rating = in6.nextLine();
+                dvd.setUserRating(rating);
+                System.out.println("\nUser rating set to " + "'" + rating + "'.");
+                break;
+        } // End of switch statement
+
+        }
+    }
 
 } // End of class definition
