@@ -16,8 +16,18 @@ public class DVDLibraryController {
 
     // define two members -- one is DVDLibrary, the other is DVDLibraryView??????
     // This is a use of composition -- DVDLibraryController has-a DVDLibraryView
-    private DVDLibraryView view = new DVDLibraryView();
-    private DVDLibraryDao dao = new DVDLibraryDaoFileImpl();
+    // Also demonstrates dependency injection to keep conmponents loosely coupled
+    private DVDLibraryView view;
+    private DVDLibraryDao dao;
+
+    public DVDLibraryController(DVDLibraryDao dao, DVDLibraryView view) {
+        this.dao = dao;
+        this.view = view;
+    }
+
+
+
+
 
     public void editInformation() {
         view.displayEditDVDBanner();
