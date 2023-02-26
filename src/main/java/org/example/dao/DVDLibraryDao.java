@@ -5,6 +5,8 @@ package org.example.dao;
 // this is an abstract base class -- only its subclasses can be inherited
 // would be useful if we had multiple LibraryCollections with similar functionality e.g. CDLibrary, VinylLibrary, etc.
 
+import org.example.dto.DVD;
+
 import java.util.ArrayList;
 
 public interface DVDLibraryDao {
@@ -12,7 +14,6 @@ public interface DVDLibraryDao {
     *
     */
     DVD addDVD(String title, DVD currDVD);
-
     /**
      *
      */

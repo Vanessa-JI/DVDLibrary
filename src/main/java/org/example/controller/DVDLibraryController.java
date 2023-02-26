@@ -6,6 +6,7 @@ package org.example.controller;
 
 import org.example.dao.DVDLibraryDao;
 import org.example.dao.DVDLibraryDaoFileImpl;
+import org.example.dto.DVD;
 import org.example.ui.DVDLibraryView;
 
 import java.util.Scanner;

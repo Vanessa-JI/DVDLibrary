@@ -4,6 +4,8 @@ package org.example.ui;
 // Uses UserIO interface to interact with the user -- completely aware of implementation ddetails
 
 
+import org.example.dto.DVD;
+
 import java.util.Scanner;
 
 // define a member that is of type UserIO
@@ -75,7 +77,7 @@ public class DVDLibraryView {
     } // End of getNewDVD method
 
     public void displayCreateDVDBanner() {
-        System.out.println("=== Create Student ===\n");
+        System.out.println("=== Create DVD ===\n");
     }
 
     public void displayCreateSuccessBanner() {

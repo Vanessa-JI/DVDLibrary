@@ -20,7 +20,7 @@ public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
 
     @Override
     public ArrayList<DVD> getAllDVDs() {
-        return null;
+        return new ArrayList<DVD>(dvds.values());
     }
 
     @Override
