@@ -25,7 +25,7 @@ public class DVDLibraryDaoFileImpl implements DVDLibraryDao {
 
     @Override
     public DVD getDVD(String title) {
-        return null;
+        return dvds.get(title);
     }
 
     @Override

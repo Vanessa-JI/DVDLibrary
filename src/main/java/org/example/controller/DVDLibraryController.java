@@ -19,6 +19,13 @@ public class DVDLibraryController {
     private DVDLibraryView view = new DVDLibraryView();
     private DVDLibraryDao dao = new DVDLibraryDaoFileImpl();
 
+    private void viewDVD() {
+        view.displayGetDVDBanner();
+        String title = view.getTitleToSearch();
+        DVD dvd = dao.getDVD(title);
+        view.displayDVD(dvd);
+    }
+
     private void listDVDs() {
         view.displayListAllBanner();
         ArrayList<DVD> dvdList = dao.getAllDVDs();
@@ -59,7 +66,7 @@ public class DVDLibraryController {
                     listDVDs();
                     break;
                 case 5:
-                    System.out.println("Search for a DVD");
+                    viewDVD();
                     break;
                 case 6:
                     System.out.println("Goodbye!");

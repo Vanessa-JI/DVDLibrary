@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e70f13c1-172a-47eb-a938-ebf4e0b49781" name="Changes" comment="Fixed issues with addDVD functionality -- import classes">
+    <list default="true" id="e70f13c1-172a-47eb-a938-ebf4e0b49781" name="Changes" comment="Fully implemented listAll functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/DVDLibraryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/DVDLibraryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/dao/DVDLibraryDaoFileImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/dao/DVDLibraryDaoFileImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ui/DVDLibraryView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ui/DVDLibraryView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677415752533</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Fully implemented listAll functionality">
+      <created>1677417613974</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1677417613974</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -186,7 +194,8 @@
     <MESSAGE value="View shows simple main menu and controller gets user selection" />
     <MESSAGE value="Fully implemented the addDVD functionality" />
     <MESSAGE value="Fixed issues with addDVD functionality -- import classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed issues with addDVD functionality -- import classes" />
+    <MESSAGE value="Fully implemented listAll functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fully implemented listAll functionality" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DVDLibrary$Main.ic" NAME="Main Coverage Results" MODIFIED="1677314578918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

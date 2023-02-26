@@ -98,4 +98,29 @@ public class DVDLibraryView {
         System.out.println("=== List all DVDs ===\n");
     }
 
+    public void displayGetDVDBanner() {
+        System.out.println("=== Display DVD ===");
+    }
+
+    public String getTitleToSearch() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the title of the DVD you'd like to see the information for: ");
+        String title = input.nextLine();
+        return title;
+    }
+
+    public void displayDVD(DVD dvd) {
+
+        if (dvd != null) {
+            System.out.println("\nDVD title: " + dvd.getTitle());
+            System.out.println("Release date: " + dvd.getReleaseDate());
+            System.out.println("MPAA Rating: " + dvd.getMpaaRating());
+            System.out.println("Director's name: " + dvd.getDirectorName());
+            System.out.println("Studio: " + dvd.getStudio());
+            System.out.println("User rating/notes: " + dvd.getUserRating());
+        } else {
+            System.out.println("DVD not found in library. Please enter another title.");
+        }
+    } // End of display DVD method
+
 } // End of class definition
