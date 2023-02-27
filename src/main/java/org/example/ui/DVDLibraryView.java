@@ -3,12 +3,11 @@
 // No other component is allowed to interact with the user
 
 package org.example.ui;
-import org.example.dto.DVD;
 
+import org.example.dto.DVD;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-// define a member that is of type UserIO
 public class DVDLibraryView {
 
     public void displayLoadingBanner() {
@@ -21,10 +20,6 @@ public class DVDLibraryView {
 
     public void displayEditDVDBanner() {
         System.out.println("=== Edit existing DVD ===");
-    }
-
-    public void editInformation() {
-        /// PUT THE FUNCTION I DEFINED AT THE BOTTOM UP HERE
     }
 
     public void displayRemoveDVDBanner() {
@@ -40,6 +35,7 @@ public class DVDLibraryView {
         }
     }
 
+    // This prints out the main menu to the user
     public int getMenuSelection() {
 
         Scanner input = new Scanner(System.in);
@@ -52,10 +48,9 @@ public class DVDLibraryView {
         System.out.println("6. Exit\n");
 
         return input.nextInt();
+    }
 
-    } // End of getMenuSelection function
-
-    // defining a new function that takes a key value pair (maybe from the hashmap) and turns it into a DVD object
+    // defining a new function that takes the appropriate field information and turns it into a DVD object
     public DVD createDVD(String title, String[] fieldsList) {
 
         // instantiating a new DVD object
@@ -75,6 +70,7 @@ public class DVDLibraryView {
         // instantiate an array list to hold all the DVD information
         String[] dvdInfo = new String[5];
 
+        // set all attributes as appropriate
         System.out.println("Enter the title of the DVD to be added: ");
         Scanner input = new Scanner(System.in);
         String newTitle = input.nextLine();
@@ -103,7 +99,7 @@ public class DVDLibraryView {
         DVD currDVD = createDVD(newTitle, dvdInfo);
 
         return currDVD;
-    } // End of getNewDVD method
+    }
 
     public void displayCreateDVDBanner() {
         System.out.println("=== Create DVD ===\n");
@@ -111,16 +107,15 @@ public class DVDLibraryView {
 
     public void displayCreateSuccessBanner() {
         System.out.println("DVD successfully created.");
-        // FIND A WAY FOR THE CLICK ENTER THIGN TO WORK
     }
 
-// define a function to list all DVDs in the library
+    // define a function to list all DVDs in the library
     public static void listAll(ArrayList<DVD> dvds) {
         System.out.println("The DVDs in your collection are: ");
         for (DVD currentDVD: dvds) {
             System.out.println("- " + currentDVD.getTitle());
         }
-    } // End of listAll method
+    }
 
     public void displayListAllBanner() {
         System.out.println("=== List all DVDs ===\n");
@@ -149,8 +144,7 @@ public class DVDLibraryView {
         } else {
             System.out.println("DVD not found in library. Please enter another title.");
         }
-    } // End of display DVD method
-
+    }
 
     public DVD editDVDInformation(DVD dvd) {
         Scanner input = new Scanner(System.in);
@@ -165,6 +159,7 @@ public class DVDLibraryView {
 
         int selection = input.nextInt();
 
+        // depending on which option the user selects, they can update a different attribute
         switch (selection) {
             case 1:
                 Scanner in = new Scanner(System.in);
