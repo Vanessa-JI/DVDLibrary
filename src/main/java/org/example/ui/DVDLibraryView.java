@@ -161,53 +161,48 @@ public class DVDLibraryView {
 
         // depending on which option the user selects, they can update a different attribute
         switch (selection) {
-            case 1:
+            case 1 -> {
                 Scanner in = new Scanner(System.in);
                 System.out.println("\nEnter the new title: ");
                 String newTitle = in.nextLine();
                 dvd.setTitle(newTitle);
                 System.out.println("\nTitle set to " + "'" + newTitle + "'.");
-                break;
-
-            case 2:
+            }
+            case 2 -> {
                 Scanner in2 = new Scanner(System.in);
                 System.out.println("\nEnter the new release date: ");
                 String newReleaseDate = in2.nextLine();
                 dvd.setReleaseDate(Integer.parseInt(newReleaseDate));
                 System.out.println("\nRelease date set to " + "'" + newReleaseDate + "'.");
-                break;
-
-            case 3:
+            }
+            case 3 -> {
                 Scanner in3 = new Scanner(System.in);
                 System.out.println("\nEnter the new MPAA rating: ");
                 String newRating = in3.nextLine();
                 dvd.setMpaaRating(newRating);
                 System.out.println("\nMPAA rating set to " + "'" + newRating + "'.");
-                break;
-
-            case 4:
+            }
+            case 4 -> {
                 Scanner in4 = new Scanner(System.in);
                 System.out.println("\nEnter the new director's name: ");
                 String directorName = in4.nextLine();
                 dvd.setDirectorName(directorName);
                 System.out.println("\nDirector's name set to " + "'" + directorName + "'.");
-                break;
-
-            case 5:
+            }
+            case 5 -> {
                 Scanner in5 = new Scanner(System.in);
                 System.out.println("\nEnter the new studio name: ");
                 String studio = in5.nextLine();
                 dvd.setStudio(studio);
                 System.out.println("\nStudio name set to " + "'" + studio + "'.");
-                break;
-
-            case 6:
+            }
+            case 6 -> {
                 Scanner in6 = new Scanner(System.in);
                 System.out.println("\nEnter the new user rating: ");
                 String rating = in6.nextLine();
                 dvd.setUserRating(rating);
                 System.out.println("\nUser rating set to " + "'" + rating + "'.");
-                break;
+            }
         } // End of switch statement
 
         return dvd;

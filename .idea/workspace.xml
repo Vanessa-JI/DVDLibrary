@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e70f13c1-172a-47eb-a938-ebf4e0b49781" name="Changes" comment="Finished commenting DVD (DTO) class">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DVDLibraryDaoException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ui/UserIO.java" beforeDir="false" />
+    <list default="true" id="e70f13c1-172a-47eb-a938-ebf4e0b49781" name="Changes" comment="Finished commenting on DVDLibraryView class">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,12 +40,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -69,11 +68,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -252,7 +246,28 @@
       <option name="project" value="LOCAL" />
       <updated>1677455500322</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Removed unnecessary classes">
+      <created>1677455647755</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1677455647755</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Finished commenting on App class">
+      <created>1677455797380</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1677455797380</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Finished commenting on DVDLibraryView class">
+      <created>1677456012416</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1677456012416</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -267,7 +282,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created project" />
     <MESSAGE value="Added all relevant classes" />
     <MESSAGE value="Added method signatures for MediaCollection class" />
     <MESSAGE value="Added addDVD and createDVD methods" />
@@ -290,7 +304,10 @@
     <MESSAGE value="Finished commenting DVDLibraryDaoException class" />
     <MESSAGE value="Finished commenting DVDLibraryDaoFileImpl class" />
     <MESSAGE value="Finished commenting DVD (DTO) class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished commenting DVD (DTO) class" />
+    <MESSAGE value="Removed unnecessary classes" />
+    <MESSAGE value="Finished commenting on App class" />
+    <MESSAGE value="Finished commenting on DVDLibraryView class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished commenting on DVDLibraryView class" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DVDLibrary$Main.ic" NAME="Main Coverage Results" MODIFIED="1677314578918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
